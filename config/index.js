@@ -12,13 +12,15 @@ module.exports = {
                 "!src/**/*.scss"
             ],
             htmlFiles: ["src/**/*.html"],
-            cssFiles: ["src/**/*.scss"],
-            jsFiles:["src/**/*.js"],
+            cssFiles: ["src/**/*.scss","!src/front/lib/**"],
+            jsFiles:["src/**/*.js","!src/front/lib/**"],
             imageFiles:["src/**/*.jpg","src/**/*.png"],
             assetsDir: "src/assets/**" //要上传到ftp或cdn的静态资源文件
         },
         dist: {
-            baseDir: "dist"
+            baseDir: "dist",
+            cssFiles: ["dist/**/*.css"],
+            jsFiles:["dist/**/*.js"],
         }
     },
     server:{

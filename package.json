@@ -1,14 +1,14 @@
 {
   "name": "gulp-h5-page",
   "version": "1.0.0",
-  "description": "",
+  "description": "gulp配置活动h5页",
   "main": "index.js",
   "scripts": {
     "dev": "gulp webserver dev",
     "build": "gulp clean&&gulp build"
   },
   "keywords": [],
-  "author": "",
+  "author": "laterly",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -25,7 +25,7 @@
     "gulp-imagemin": "^6.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
-    "gulp-replace": "^1.0.0",
+    "gulp-rev-dxb": "^9.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2"
   }
