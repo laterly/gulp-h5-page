@@ -6,13 +6,13 @@
     ├── index.html          // home主页
         ├── style           //样式
         ├── js              //js
-        ├── image           //图片
+        ├── images          //图片
     ├── front               // 多页目录
         ├── index           //多页目录地址名
             ├── index.html  //首页html
             ├── style       //样式
             ├── js          //js
-            ├── image       //图片
+            ├── images      //图片
         ├── lib             //插件目录，不需要打包
 ├──  ├── config             // gulp配置文件
 ├── gulpfile.js             // gulp打包
