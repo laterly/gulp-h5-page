@@ -7,14 +7,14 @@ module.exports = {
             baseDir: "src",
             baseFiles: [
                 "src/**/*",
-                "!src/assets/**",
+                "!src/**/*.js",
                 "!src/**/*.html",
                 "!src/**/*.scss"
             ],
             htmlFiles: ["src/**/*.html"],
             cssFiles: ["src/**/*.scss","!src/front/lib/**"],
             jsFiles:["src/**/*.js","!src/front/lib/**"],
-            imageFiles:["src/**/*.jpg","src/**/*.png"],
+            imageFiles:["src/**/*.jpg","src/**/*.png","!src/front/lib/**"],
             assetsDir: "src/assets/**" //要上传到ftp或cdn的静态资源文件
         },
         dist: {
