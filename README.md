@@ -1,7 +1,7 @@
 ### 项目目录
 
 ```
-.
+
 ├── src
     ├── index.html          // home主页
         ├── style           //样式
