@@ -14,6 +14,7 @@ module.exports = {
             htmlFiles: ["src/**/*.html"],
             cssFiles: ["src/**/*.scss"],
             jsFiles:["src/**/*.js"],
+            imageFiles:["src/**/*.jpg","src/**/*.png"],
             assetsDir: "src/assets/**" //要上传到ftp或cdn的静态资源文件
         },
         dist: {
