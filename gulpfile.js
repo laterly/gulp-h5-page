@@ -146,7 +146,7 @@ function watchHandler(event, file) {
             compileJs(file, dest); // js文件
         } else if (/.(html)$/i.test(ext_name)) {
             compileHtml(file, dest); // html 文件
-        }else if(/.(png|jpg)$/i.test(ext_name)){
+        } else if (/.(png|jpg)$/i.test(ext_name)) {
             compileImage(file, dest)
         } else {
             copyFiles(file, dest);
@@ -178,12 +178,18 @@ gulp.task(
     "dev",
     gulp.series(
         copyFiles,
-        gulp.parallel(compileCss, compileJs, compileImage,compileHtml),
-        watch
+        gulp.parallel(compileCss, compileJs, compileImage, compileHtml),
+        watch, done => {
+            done();
+        }
     )
 );
 //build任务
+console.time('build')
 gulp.task(
     "build",
-    gulp.series(copyFiles, gulp.parallel(compileCss, compileJs,compileImage, compileHtml))
+    gulp.series(copyFiles, gulp.parallel(compileCss, compileJs, compileImage, compileHtml), done => {
+        done();
+        console.timeEnd('build')
+    })
 );
