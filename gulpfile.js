@@ -119,7 +119,8 @@ function compileHtml(file, dest = paths.dist.baseDir) {
     .pipe(
       version({
         paramName: "version",
-        paramType: "timestamp"
+        paramType: "timestamp",
+        suffix: ['css', 'js', 'jpg','png']
       })
     )
     .pipe(gulp.dest(dest))
