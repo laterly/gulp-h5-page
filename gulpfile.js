@@ -67,12 +67,6 @@ function compileJs(file, dest = paths.dist.baseDir) {
     })
     .pipe(plumber())
     .pipe(
-      browserify({
-        insertGlobals: true,
-        debug: env === "dev",
-      })
-    )
-    .pipe(
       babel({
         presets: ["@babel/env"]
       })
