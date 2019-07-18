@@ -9,7 +9,8 @@ const gulp = require("gulp"),
   htmlmin = require("gulp-htmlmin"),
   imagemin = require("gulp-imagemin"), // 图片压缩
   cache = require("gulp-cache"), // 图片缓存（只压缩修改的图片）
-  version = require("gulp-html-version"),
+  version = require("gulp-html-version"), //版本号
+  browserify = require('gulp-browserify'), //配置模块化
   rename = require("gulp-rename"),
   plumber = require("gulp-plumber"),
   babel = require("gulp-babel"),
@@ -66,6 +67,12 @@ function compileJs(file, dest = paths.dist.baseDir) {
     })
     .pipe(plumber())
     .pipe(
+      browserify({
+        insertGlobals: true,
+        debug: env === "dev",
+      })
+    )
+    .pipe(
       babel({
         presets: ["@babel/env"]
       })
@@ -116,13 +123,13 @@ function compileHtml(file, dest = paths.dist.baseDir) {
     })
     .pipe(plumber())
     .pipe(gulpif(env === "build", htmlmin(options)))
-    .pipe(
+    .pipe(gulpif(env === "build",
       version({
         paramName: "version",
         paramType: "timestamp",
-        suffix: ['css', 'js', 'jpg','png']
+        suffix: ['css', 'js', 'jpg', 'png']
       })
-    )
+    ))
     .pipe(gulp.dest(dest))
     .pipe(connect.reload());
 }
