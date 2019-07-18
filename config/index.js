@@ -11,7 +11,7 @@ module.exports = {
                 "!src/**/*.html",
                 "!src/**/*.scss"
             ],
-            htmlFiles: ["../rev/rev-manifest.json","src/**/*.html"],
+            htmlFiles: ["src/**/*.html"],
             cssFiles: ["src/**/*.scss","!src/front/lib/**"],
             jsFiles:["src/**/*.js","!src/front/lib/**"],
             imageFiles:["src/**/*.jpg","src/**/*.png","!src/front/lib/**"],
